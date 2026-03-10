@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Light Theme Colors (Cerah Elegan) -->
+    <color name="md_theme_light_primary">#111111</color>
+    <color name="md_theme_light_onPrimary">#FFFFFF</color>
+    <color name="md_theme_light_primaryContainer">#E0E0E0</color>
+    <color name="md_theme_light_onPrimaryContainer">#111111</color>
+
+    <color name="md_theme_light_secondary">#555555</color>
+    <color name="md_theme_light_onSecondary">#FFFFFF</color>
+    <color name="md_theme_light_secondaryContainer">#1A000000</color>
+    <color name="md_theme_light_onSecondaryContainer">#111111</color>
+
+    <color name="md_theme_light_tertiary">#333333</color>
+    <color name="md_theme_light_onTertiary">#FFFFFF</color>
+    <color name="md_theme_light_tertiaryContainer">#CCCCCC</color>
+    <color name="md_theme_light_onTertiaryContainer">#111111</color>
+
+    <color name="md_theme_light_background">@android:color/transparent</color>
+    <color name="md_theme_light_onBackground">#111111</color>
+
+    <!-- Surface sedikit transparan cerah -->
+    <color name="md_theme_light_surface">#F2FFFFFF</color>
+    <color name="md_theme_light_onSurface">#111111</color>
+
+    <color name="md_theme_light_surfaceVariant">#0D000000</color>
+    <color name="md_theme_light_onSurfaceVariant">#666666</color>
+
+    <color name="md_theme_light_outline">#1A000000</color>
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp" android:height="24dp"
+    android:viewportWidth="64" android:viewportHeight="64">
+  <!-- Path dari SVG asli Quad9, scaled ke 64x64 -->
+  <path android:fillColor="#DC205E"
+    android:pathData="
+      M18.235,63.971 H33.188
+      L50.076,38.711
+      C53.973,32.881 56.167,27.511 56.167,21.651
+      C56.167,9.238 45.746,0 32.034,0
+      C18.322,0 7.9,9.295 7.9,21.882
+      C7.9,34.469 17.109,43.215 30.128,43.215
+      C31.081,43.215 32.062,43.157 33.015,43.042
+      L18.205,64 Z
+      M32.034,32.332
+      C25.567,32.332 20.804,27.972 20.804,21.795
+      C20.804,15.618 25.567,11.258 32.034,11.258
+      C38.5,11.258 43.264,15.56 43.264,21.795
+      C43.264,28.03 38.442,32.332 32.034,32.332 Z" />
+</vector>

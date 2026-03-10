@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">ResTile</string>
+
+  <!-- Resolution tile -->
+  <string name="tile_label">Resolusi</string>
+  <string name="dialog_title">Resolution Tile</string>
+  <string name="preview_ready">t.me/aeldy24 | t.me/navalabs</string>
+  <string name="preview_out_of_sync">Resolusi tidak sinkron — geser untuk setel ulang</string>
+  <string name="btn_apply">Apply</string>
+  <string name="btn_reset">Reset</string>
+  <string name="btn_cancel">Batal</string>
+  <string name="btn_back">Back</string>
+  <string name="apply_success_toast">Resolusi berhasil diterapkan</string>
+  <string name="apply_failed">Gagal menerapkan resolusi</string>
+  <string name="reset_success">Resolusi direset ke asli</string>
+  <string name="reset_failed">Gagal reset resolusi</string>
+  <string name="confirm_apply_label">Terapkan resolusi ini?</string>
+  <string name="confirm_reset_label">Reset ke resolusi fisik?</string>
+  <string name="reset_confirm_ok">Reset</string>
+
+  <!-- Permission dialog -->
+  <string name="perm_title">Izin Diperlukan</string>
+  <string name="perm_desc">Aplikasi ini butuh izin WRITE_SECURE_SETTINGS yang hanya bisa diberikan lewat ADB. Jalankan perintah ini sekali dari PC:</string>
+  <string name="perm_step_label">Perintah ADB</string>
+  <string name="perm_command">adb shell pm grant com.aeldy24.restile android.permission.WRITE_SECURE_SETTINGS</string>
+  <string name="perm_note">Setelah dijalankan, buka tile kembali.</string>
+  <string name="perm_copied">Perintah disalin</string>
+  <string name="perm_ok">Tutup</string>
+
+  <!-- DNS tile -->
+  <string name="dns_tile_label">Private DNS</string>
+  <string name="dns_dialog_title">Private DNS</string>
+  <string name="dns_dialog_subtitle">t.me/aeldy24 | t.me/navalabs</string>
+  <string name="dns_confirm_question">Ganti Private DNS ke:</string>
+  <string name="dns_apply_success">DNS diubah ke %1$s</string>
+  <string name="dns_apply_failed">Gagal mengubah DNS</string>
+  <string name="dns_requires_android9">Private DNS memerlukan Android 9 atau lebih baru</string>
+</resources>

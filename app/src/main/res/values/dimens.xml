@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- Max height for DNS list scroll area; limits dialog height in landscape -->
+  <dimen name="dns_list_max_height">240dp</dimen>
+</resources>
