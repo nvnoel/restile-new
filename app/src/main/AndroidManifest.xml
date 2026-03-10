@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  >
+
+  <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+  <uses-permission android:name="android.permission.VIBRATE" />
+  <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+  <uses-permission android:name="moe.shizuku.manager.permission.API_V23" />
+
+  <application
+    android:name=".ResTileApp"
+    android:allowBackup="true"
+    android:icon="@drawable/ic_resolution"
+    android:label="@string/app_name"
+    android:supportsRtl="true"
+    android:theme="@style/Theme.ResTile"
+    android:windowLayoutInDisplayCutoutMode="shortEdges">
+
+    <meta-data
+      android:name="moe.shizuku.client.V3_SUPPORT"
+      android:value="true" />
+
+    <provider
+      android:name="rikka.shizuku.ShizukuProvider"
+      android:authorities="com.aeldy24.restile.shizuku"
+      android:multiprocess="false"
+      android:enabled="true"
+      android:exported="true"
+      android:permission="android.permission.INTERACT_ACROSS_USERS_FULL" />
+
+    <activity
+      android:name=".ResolutionDialogActivity"
+      android:exported="true"
+      android:theme="@style/Theme.Transparent"
+      android:excludeFromRecents="true"
+      android:taskAffinity=""
+      android:launchMode="singleTop"
+      android:windowSoftInputMode="adjustNothing"
+      android:configChanges="density|screenSize|screenLayout|smallestScreenSize|orientation|uiMode" />
+
+    <service
+      android:name=".ResolutionTileService"
+      android:exported="true"
+      android:label="@string/tile_label"
+      android:icon="@drawable/ic_resolution"
+      android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+      <intent-filter>
+        <action android:name="android.service.quicksettings.action.QS_TILE" />
+      </intent-filter>
+      <meta-data
+        android:name="android.service.quicksettings.TOGGLEABLE_TILE"
+        android:value="false" />
+    </service>
+
+    <activity
+      android:name=".DnsDialogActivity"
+      android:exported="true"
+      android:theme="@style/Theme.Transparent"
+      android:excludeFromRecents="true"
+      android:taskAffinity=""
+      android:launchMode="singleTop"
+      android:windowSoftInputMode="adjustNothing"
+      android:configChanges="density|screenSize|screenLayout|smallestScreenSize|orientation|uiMode" />
+
+    <service
+      android:name=".DnsTileService"
+      android:exported="true"
+      android:label="@string/dns_tile_label"
+      android:icon="@drawable/ic_dns"
+      android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+      <intent-filter>
+        <action android:name="android.service.quicksettings.action.QS_TILE" />
+      </intent-filter>
+      <meta-data
+        android:name="android.service.quicksettings.TOGGLEABLE_TILE"
+        android:value="false" />
+    </service>
+
+  </application>
+
+</manifest>

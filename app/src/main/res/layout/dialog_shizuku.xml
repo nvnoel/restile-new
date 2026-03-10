@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:padding="24dp">
+
+  <com.google.android.material.card.MaterialCardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    app:cardBackgroundColor="?attr/colorSurface"
+    app:cardCornerRadius="28dp"
+    app:cardElevation="0dp"
+    app:strokeWidth="0dp">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:padding="24dp">
+
+      <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvShizukuTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="Dibutuhkan Shizuku"
+        android:textAppearance="?attr/textAppearanceHeadlineSmall"
+        android:textColor="?attr/colorOnSurface"
+        android:textStyle="bold" />
+
+      <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvShizukuMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/inter"
+        android:gravity="center"
+        android:text="Aplikasi ini membutuhkan Shizuku untuk berjalan pertama kali penginstalan."
+        android:textAppearance="?attr/textAppearanceBodyMedium"
+        android:textColor="?attr/colorOnSurfaceVariant" />
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="24dp"
+        android:alpha="0.2"
+        android:background="?attr/colorOutline" />
+
+      <LinearLayout
+        android:id="@+id/layoutShizukuButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+          android:id="@+id/btnShizukuClose"
+          style="@style/Widget.Material3.Button.TonalButton"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="8dp"
+          android:layout_weight="1"
+          android:text="Tutup"
+          android:textColor="?attr/colorOnSurfaceVariant" />
+
+        <com.google.android.material.button.MaterialButton
+          android:id="@+id/btnShizukuAllow"
+          style="@style/Widget.Material3.Button"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="Izinkan"
+          android:visibility="gone" />
+      </LinearLayout>
+    </LinearLayout>
+  </com.google.android.material.card.MaterialCardView>
+</FrameLayout>

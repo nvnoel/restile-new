@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:paddingTop="24dp"
+  android:paddingBottom="24dp">
+
+<com.google.android.material.card.MaterialCardView
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_gravity="center"
+  app:cardCornerRadius="28dp"
+  app:cardBackgroundColor="?attr/colorSurface"
+  app:cardElevation="0dp"
+  app:strokeWidth="0dp">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp">
+
+    <!-- Header: fixed, tidak ikut scroll -->
+    <com.google.android.material.textview.MaterialTextView
+      android:id="@+id/tvDnsTitle"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/dns_dialog_title"
+      android:textStyle="bold"
+      android:fontFamily="@font/inter"
+      android:includeFontPadding="false"
+      android:textAppearance="?attr/textAppearanceHeadlineSmall"
+      android:textColor="?attr/colorOnSurface"
+      android:gravity="center" />
+
+    <com.google.android.material.textview.MaterialTextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="4dp"
+      android:text="@string/dns_dialog_subtitle"
+      android:fontFamily="@font/inter"
+      android:textAppearance="?attr/textAppearanceBodyMedium"
+      android:textColor="?attr/colorOnSurfaceVariant"
+      android:gravity="center" />
+
+    <!-- Hanya list yang scroll; maxHeight di-set programmatik di Activity -->
+    <androidx.core.widget.NestedScrollView
+      android:id="@+id/listScroll"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      android:layout_marginTop="16dp"
+      android:scrollbars="none"
+      android:overScrollMode="never">
+
+      <LinearLayout
+        android:id="@+id/layoutDnsList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+          android:id="@+id/dnsListContainer"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical" />
+
+      </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Footer: fixed, tidak ikut scroll -->
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginTop="16dp"
+      android:layout_marginBottom="12dp"
+      android:background="?attr/colorOutline"
+      android:alpha="0.2" />
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:gravity="center">
+
+      <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDnsCancel"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginEnd="8dp"
+        android:text="@string/btn_cancel"
+        android:textColor="?attr/colorOnSurfaceVariant" />
+
+      <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDnsApply"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/btn_apply" />
+
+    </LinearLayout>
+
+  </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
+</FrameLayout>

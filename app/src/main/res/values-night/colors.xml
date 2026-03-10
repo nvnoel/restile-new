@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark Theme Colors (Hitam Keabu-abuan Transparan) -->
+    <color name="md_theme_dark_primary">#FFFFFF</color>
+    <color name="md_theme_dark_onPrimary">#111111</color>
+    <color name="md_theme_dark_primaryContainer">#333333</color>
+    <color name="md_theme_dark_onPrimaryContainer">#FFFFFF</color>
+
+    <color name="md_theme_dark_secondary">#AAAAAA</color>
+    <color name="md_theme_dark_onSecondary">#111111</color>
+    <color name="md_theme_dark_secondaryContainer">#25FFFFFF</color>
+    <color name="md_theme_dark_onSecondaryContainer">#FFFFFF</color>
+
+    <color name="md_theme_dark_tertiary">#CCCCCC</color>
+    <color name="md_theme_dark_onTertiary">#111111</color>
+    <color name="md_theme_dark_tertiaryContainer">#333333</color>
+    <color name="md_theme_dark_onTertiaryContainer">#FFFFFF</color>
+
+    <color name="md_theme_dark_background">@android:color/transparent</color>
+    <color name="md_theme_dark_onBackground">#FFFFFF</color>
+
+    <!-- Surface sedikit transparan: F2141414 (Sekitar 95% opacity hitam keabu-abuan) -->
+    <color name="md_theme_dark_surface">#F2141414</color>
+    <color name="md_theme_dark_onSurface">#F0FFFFFF</color>
+
+    <color name="md_theme_dark_surfaceVariant">#1AFFFFFF</color>
+    <color name="md_theme_dark_onSurfaceVariant">#A0FFFFFF</color>
+
+    <color name="md_theme_dark_outline">#33FFFFFF</color>
+</resources>

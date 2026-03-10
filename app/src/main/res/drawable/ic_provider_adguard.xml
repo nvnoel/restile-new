@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp" android:height="24dp"
+    android:viewportWidth="64" android:viewportHeight="64">
+  <!-- Shield hijau terang (sisi kanan/depan) -->
+  <path android:fillColor="#68BC71"
+    android:pathData="M32,0 C22.1,0 10.2,2.3 0.4,7.3 C0.4,18.3 0.2,45.4 32,64 C63.8,45.4 63.6,18.3 63.6,7.3 C53.8,2.3 41.9,0 32,0 Z" />
+  <!-- Shield hijau gelap (sisi kiri/shadow) -->
+  <path android:fillColor="#5DA865"
+    android:pathData="M32,64 C0.2,45.4 0.4,18.3 0.4,7.3 C10.2,2.3 22.1,0 32,0 V64 Z" />
+  <!-- Checkmark putih -->
+  <path android:fillColor="#FFFFFF"
+    android:pathData="M30.8,42.7 L50,17.3 C48.6,16.2 47.4,17 46.7,17.6 L30.7,33.9 L24.7,26.8 C21.8,23.5 17.9,26 17,26.7 Z" />
+</vector>
