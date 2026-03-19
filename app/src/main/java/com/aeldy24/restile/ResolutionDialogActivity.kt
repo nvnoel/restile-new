@@ -234,19 +234,27 @@ class ResolutionDialogActivity : BaseDialogActivity() {
   }
 
   private fun doApply(pct: Int) {
+    btnConfirmAction.isEnabled = false
+    btnCancelConfirm.isEnabled = false
     dismissDialog()
-    ResolutionManager.applyResolution(this, pct) { ok ->
-      Toast.makeText(this, if (ok) R.string.apply_success_toast else R.string.apply_failed, Toast.LENGTH_SHORT).show()
-      finish()
-    }
+    android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+      ResolutionManager.applyResolution(this, pct) { ok ->
+        Toast.makeText(this, if (ok) R.string.apply_success_toast else R.string.apply_failed, Toast.LENGTH_SHORT).show()
+        finish()
+      }
+    }, 300)
   }
 
   private fun doReset() {
+    btnConfirmAction.isEnabled = false
+    btnCancelConfirm.isEnabled = false
     dismissDialog()
-    ResolutionManager.resetResolution(this) { ok ->
-      Toast.makeText(this, if (ok) R.string.reset_success else R.string.reset_failed, Toast.LENGTH_SHORT).show()
-      finish()
-    }
+    android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+      ResolutionManager.resetResolution(this) { ok ->
+        Toast.makeText(this, if (ok) R.string.reset_success else R.string.reset_failed, Toast.LENGTH_SHORT).show()
+        finish()
+      }
+    }, 300)
   }
 
   private fun dismissDialog() {
