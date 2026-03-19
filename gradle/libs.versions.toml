@@ -6,7 +6,7 @@ appcompat = "1.7.1"
 material = "1.13.0"
 constraintlayout = "2.2.1"
 annotation = "1.9.1"
-transition = "1.5.1"
+transition = "1.7.0"
 shizuku = "13.1.5"
 hiddenapibypass = "6.1"
 
