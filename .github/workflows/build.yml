@@ -33,7 +33,7 @@ jobs:
         path: app/build/outputs/apk/release/*.apk
 
     - name: Create Release and Upload APK
-      uses: softprops/action-gh-release@v2
+      uses: softprops/action-gh-release@v3
       if: startsWith(github.ref, 'refs/heads/') # Upload hanya saat commit ke branch utama (main/master)
       with:
         name: Latest Build (${{ github.sha }})
