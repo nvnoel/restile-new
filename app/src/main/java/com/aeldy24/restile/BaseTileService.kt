@@ -6,6 +6,9 @@ import android.os.Build
 import android.service.quicksettings.TileService
 
 abstract class BaseTileService : TileService() {
+  protected fun hasSystemAlertWindow(): Boolean {
+    return android.provider.Settings.canDrawOverlays(this)
+  }
 
   // API 34+: startActivityAndCollapse(Intent) deprecated → wajib PendingIntent
   protected fun launchDialog(cls: Class<*>) {
