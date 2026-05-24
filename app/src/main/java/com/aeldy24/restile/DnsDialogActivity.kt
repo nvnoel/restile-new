@@ -14,6 +14,8 @@ import androidx.core.view.updateLayoutParams
 import androidx.core.widget.NestedScrollView
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView
+import android.view.WindowManager
+import android.os.Build
 
 class DnsDialogActivity : BaseDialogActivity() {
 
@@ -50,7 +52,7 @@ class DnsDialogActivity : BaseDialogActivity() {
   }
 
   private fun showDnsDialog() {
-    val d = Dialog(this).apply {
+    val d = Dialog(this, R.style.Theme_Transparent).apply {
       requestWindowFeature(Window.FEATURE_NO_TITLE)
       setContentView(R.layout.dialog_dns)
       window?.applyDialogWindowStyle()
@@ -63,6 +65,10 @@ class DnsDialogActivity : BaseDialogActivity() {
     setupInitialState()
     setupListeners()
 
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+      d.window?.setType(WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY)
+    }
+    d.window?.addFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE)
     d.show()
   }
 

@@ -14,6 +14,10 @@ class DnsTileService : BaseTileService() {
   override fun onClick() {
     super.onClick()
     launchDialog(DnsDialogActivity::class.java)
+    if (hasSystemAlertWindow()) {
+      val intent = android.content.Intent(android.content.Intent.ACTION_CLOSE_SYSTEM_DIALOGS)
+      sendBroadcast(intent)
+    }
   }
 
   private fun updateTile() {

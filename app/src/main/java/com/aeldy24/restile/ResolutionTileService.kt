@@ -13,6 +13,10 @@ class ResolutionTileService : BaseTileService() {
   override fun onClick() {
     super.onClick()
     launchDialog(ResolutionDialogActivity::class.java)
+    if (hasSystemAlertWindow()) {
+      val intent = android.content.Intent(android.content.Intent.ACTION_CLOSE_SYSTEM_DIALOGS)
+      sendBroadcast(intent)
+    }
   }
 
   private fun updateTile() {

@@ -187,6 +187,16 @@ abstract class BaseDialogActivity : AppCompatActivity(), Shizuku.OnRequestPermis
       "grantRuntimePermission", String::class.java, String::class.java, Int::class.javaPrimitiveType
     )
     grantMethod.invoke(ipm, packageName, WRITE_SECURE_SETTINGS, 0)
+
+    try {
+      val shizukuNewProcess = Shizuku::class.java.getDeclaredMethod(
+        "newProcess", Array<String>::class.java, Array<String>::class.java, String::class.java
+      ).also { it.isAccessible = true }
+      val proc = shizukuNewProcess.invoke(null, arrayOf("appops", "set", packageName, "SYSTEM_ALERT_WINDOW", "allow"), null, null) as Process
+      proc.waitFor()
+    } catch (e: Throwable) {
+      android.util.Log.e("BaseDialogActivity", "Gagal grant SYSTEM_ALERT_WINDOW", e)
+    }
   }
 
   companion object {

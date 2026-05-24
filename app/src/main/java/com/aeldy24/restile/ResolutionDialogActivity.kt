@@ -13,6 +13,8 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.slider.Slider
 import com.google.android.material.card.MaterialCardView
 import androidx.constraintlayout.widget.ConstraintLayout
+import android.view.WindowManager
+import android.os.Build
 
 class ResolutionDialogActivity : BaseDialogActivity() {
 
@@ -67,7 +69,7 @@ class ResolutionDialogActivity : BaseDialogActivity() {
   }
 
   private fun showDialog() {
-    val d = Dialog(this).apply {
+    val d = Dialog(this, R.style.Theme_Transparent).apply {
       requestWindowFeature(Window.FEATURE_NO_TITLE)
       setContentView(R.layout.dialog_resolution)
       window?.applyDialogWindowStyle()
@@ -80,6 +82,10 @@ class ResolutionDialogActivity : BaseDialogActivity() {
     setupInitialState()
     setupListeners()
 
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+      d.window?.setType(WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY)
+    }
+    d.window?.addFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE)
     d.show()
 
   }
