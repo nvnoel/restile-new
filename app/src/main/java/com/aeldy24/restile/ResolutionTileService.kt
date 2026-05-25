@@ -12,10 +12,15 @@ class ResolutionTileService : BaseTileService() {
 
   override fun onClick() {
     super.onClick()
-    launchDialog(ResolutionDialogActivity::class.java)
     if (hasSystemAlertWindow()) {
-      val intent = android.content.Intent(android.content.Intent.ACTION_CLOSE_SYSTEM_DIALOGS)
-      sendBroadcast(intent)
+        val intent = android.content.Intent(android.content.Intent.ACTION_CLOSE_SYSTEM_DIALOGS)
+        sendBroadcast(intent)
+
+        android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+            FloatingViewManager.showUpscaler(this)
+        }, 200)
+    } else {
+        launchDialog(ResolutionDialogActivity::class.java)
     }
   }
 

@@ -4,7 +4,7 @@
 
   <!-- Resolution tile -->
   <string name="tile_label">Upscaler</string>
-  <string name="dialog_title">Upscaler</string>
+  <string name="dialog_title">Upscaler Tile</string>
   <string name="preview_ready">t.me/aeldy24 | t.me/navalabs</string>
   <string name="preview_out_of_sync">Resolusi tidak sinkron — geser untuk setel ulang</string>
   <string name="btn_apply">Apply</string>
@@ -30,7 +30,7 @@
 
   <!-- DNS tile -->
   <string name="dns_tile_label">Private DNS</string>
-  <string name="dns_dialog_title">Private DNS</string>
+  <string name="dns_dialog_title">DNS Tile</string>
   <string name="dns_dialog_subtitle">t.me/aeldy24 | t.me/navalabs</string>
   <string name="dns_confirm_question">Ganti Private DNS ke:</string>
   <string name="dns_apply_success">DNS diubah ke %1$s</string>

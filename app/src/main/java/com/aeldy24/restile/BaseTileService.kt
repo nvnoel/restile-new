@@ -2,12 +2,20 @@ package com.aeldy24.restile
 
 import android.app.PendingIntent
 import android.content.Intent
+import android.net.Uri
 import android.os.Build
+import android.provider.Settings
 import android.service.quicksettings.TileService
 
 abstract class BaseTileService : TileService() {
   protected fun hasSystemAlertWindow(): Boolean {
-    return android.provider.Settings.canDrawOverlays(this)
+    return Settings.canDrawOverlays(this)
+  }
+
+  protected fun requestSystemAlertWindow() {
+      val intent = Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:$packageName"))
+      intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+      startActivityAndCollapse(intent)
   }
 
   // API 34+: startActivityAndCollapse(Intent) deprecated → wajib PendingIntent
