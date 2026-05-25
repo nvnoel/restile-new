@@ -85,7 +85,7 @@ abstract class BaseDialogActivity : AppCompatActivity(), Shizuku.OnRequestPermis
     val btnAllow = d.findViewById<MaterialButton>(R.id.btnShizukuAllow)
 
     tvTitle.text = "Dibutuhkan Shizuku"
-    tvMessage.text = "Aplikasi ini membutuhkan Shizuku untuk berjalan pertama kali penginstalan."
+    tvMessage.text = "Aplikasi ini membutuhkan Shizuku untuk berjalan pertama kali penginstalan. Jika Shizuku tidak tersedia, pastikan Anda memberikan izin Tampilkan di Atas Aplikasi Lain secara manual agar fitur melayang berfungsi."
 
     btnClose.setOnClickListener {
       vibrateClick()

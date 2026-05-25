@@ -82,10 +82,6 @@ class ResolutionDialogActivity : BaseDialogActivity() {
     setupInitialState()
     setupListeners()
 
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-      d.window?.setType(WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY)
-    }
-    d.window?.addFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE)
     d.show()
 
   }

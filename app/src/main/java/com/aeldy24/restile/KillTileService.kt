@@ -71,7 +71,9 @@ class KillTileService : TileService() {
                 killedCount++
             }
 
-            showToastSuccess()
+            mainHandler.post {
+                Toast.makeText(this@KillTileService, "Mode Terbatas: Beberapa aplikasi mungkin tetap berjalan. Nyalakan Shizuku untuk pembersihan maksimal.", Toast.LENGTH_LONG).show()
+            }
         } catch (e: Exception) {
             e.printStackTrace()
             showToastError(e.message ?: "Failed to kill apps")
@@ -103,16 +105,12 @@ class KillTileService : TileService() {
                     e.printStackTrace()
                 }
             }
-            showToastSuccess()
+            mainHandler.post {
+                Toast.makeText(this@KillTileService, R.string.kill_success_toast, Toast.LENGTH_SHORT).show()
+            }
         } catch (e: Exception) {
             e.printStackTrace()
             showToastError(e.message ?: "Failed to kill apps via Shizuku")
-        }
-    }
-
-    private fun showToastSuccess() {
-        mainHandler.post {
-            Toast.makeText(this, R.string.kill_success_toast, Toast.LENGTH_SHORT).show()
         }
     }
 

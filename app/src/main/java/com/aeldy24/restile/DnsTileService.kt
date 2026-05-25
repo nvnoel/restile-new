@@ -13,10 +13,15 @@ class DnsTileService : BaseTileService() {
 
   override fun onClick() {
     super.onClick()
-    launchDialog(DnsDialogActivity::class.java)
     if (hasSystemAlertWindow()) {
-      val intent = android.content.Intent(android.content.Intent.ACTION_CLOSE_SYSTEM_DIALOGS)
-      sendBroadcast(intent)
+        val intent = android.content.Intent(android.content.Intent.ACTION_CLOSE_SYSTEM_DIALOGS)
+        sendBroadcast(intent)
+
+        android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+            FloatingViewManager.showDns(this)
+        }, 200)
+    } else {
+        launchDialog(DnsDialogActivity::class.java)
     }
   }
 
