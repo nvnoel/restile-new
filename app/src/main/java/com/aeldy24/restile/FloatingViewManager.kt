@@ -22,6 +22,14 @@ import com.google.android.material.color.DynamicColors
 
 object FloatingViewManager {
 
+    private const val DIALOG_MAX_DP = 320
+
+    private fun getDialogWidth(context: Context): Int {
+        val density = context.resources.displayMetrics.density
+        val screenWidth = context.resources.displayMetrics.widthPixels
+        return minOf((DIALOG_MAX_DP * density).toInt(), screenWidth)
+    }
+
     fun showUpscaler(context: Context) {
         val wm = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
 
@@ -40,7 +48,7 @@ object FloatingViewManager {
         }
 
         val params = WindowManager.LayoutParams(
-            WindowManager.LayoutParams.WRAP_CONTENT,
+            getDialogWidth(context),
             WindowManager.LayoutParams.WRAP_CONTENT,
             layoutFlag,
             WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
@@ -253,7 +261,7 @@ object FloatingViewManager {
         }
 
         val params = WindowManager.LayoutParams(
-            WindowManager.LayoutParams.WRAP_CONTENT,
+            getDialogWidth(context),
             WindowManager.LayoutParams.WRAP_CONTENT,
             layoutFlag,
             WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
