@@ -14,6 +14,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.view.ContextThemeWrapper
 import androidx.transition.TransitionManager
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.slider.Slider
@@ -23,15 +24,13 @@ object FloatingViewManager {
 
     fun showUpscaler(context: Context) {
         val wm = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
-        val inflater = LayoutInflater.from(context)
-        val view = inflater.inflate(R.layout.dialog_resolution, null)
 
         // Memaksa tema untuk mewarisi warna yang tepat, karena Context mungkin application context
-        // Kita tidak bisa langsung pakai theme attributes. Sebagai workaround kita bisa bungkus contextnya.
-        // Tapi R.layout.dialog_resolution pakai ?attr, jadi lebih baik wrap dengan ContextThemeWrapper.
-        val themedContext = android.view.ContextThemeWrapper(context, R.style.Theme_ResTile)
-        val themedInflater = LayoutInflater.from(themedContext)
-        val themedView = themedInflater.inflate(R.layout.dialog_resolution, null)
+        val themedContext = ContextThemeWrapper(context, R.style.Theme_ResTile)
+
+        // Memastikan view diinflate menggunakan LayoutInflater yang dibuat khusus untuk theamedContext
+        val themedInflater = LayoutInflater.from(themedContext).cloneInContext(themedContext)
+        val view = themedInflater.inflate(R.layout.dialog_resolution, null)
 
         val layoutFlag = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
@@ -52,10 +51,10 @@ object FloatingViewManager {
         params.gravity = Gravity.CENTER
         params.dimAmount = 0.6f
 
-        setupUpscalerLogic(themedContext, themedView, wm)
+        setupUpscalerLogic(themedContext, view, wm)
 
         try {
-            wm.addView(themedView, params)
+            wm.addView(view, params)
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -242,9 +241,9 @@ object FloatingViewManager {
 
     fun showDns(context: Context) {
         val wm = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
-        val themedContext = android.view.ContextThemeWrapper(context, R.style.Theme_ResTile)
-        val themedInflater = LayoutInflater.from(themedContext)
-        val themedView = themedInflater.inflate(R.layout.dialog_dns, null)
+        val themedContext = ContextThemeWrapper(context, R.style.Theme_ResTile)
+        val themedInflater = LayoutInflater.from(themedContext).cloneInContext(themedContext)
+        val view = themedInflater.inflate(R.layout.dialog_dns, null)
 
         val layoutFlag = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
@@ -265,10 +264,10 @@ object FloatingViewManager {
         params.gravity = Gravity.CENTER
         params.dimAmount = 0.6f
 
-        setupDnsLogic(themedContext, themedView, wm)
+        setupDnsLogic(themedContext, view, wm)
 
         try {
-            wm.addView(themedView, params)
+            wm.addView(view, params)
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -282,7 +281,7 @@ object FloatingViewManager {
         val currentId = DnsManager.getCurrentId(context)
         var pendingOpt = DnsManager.options.find { it.id == currentId }
         val rows = mutableListOf<View>()
-        val inflater = LayoutInflater.from(context)
+        val inflater = LayoutInflater.from(context).cloneInContext(context)
 
         fun updateRowUi(row: View, isSelected: Boolean, opt: DnsOption, animate: Boolean) {
             row.findViewById<ImageView>(R.id.ivDnsIcon).setImageResource(opt.iconRes)
